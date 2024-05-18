@@ -1,0 +1,600 @@
+body {
+  margin: 0;
+  padding: 0;
+ /* background-image: url('./wallpaper.png'); */
+  background-size: cover;
+  background-attachment: fixed; /* Set background image to be fixed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #40407b, #4d4d4d);
+}
+.App-main {
+
+  font-family: 'Helvetica', sans-serif; /* Change font family */
+  font-size: 72px;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(to right, #333333, #fff, #000); /* Set the gradient background */
+  background-size: 200% auto; /* Set background size to 200% to cover the entire width */
+  color: transparent; /* Make the text transparent initially */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  animation: glowingText 5s linear infinite; /* Apply the animation */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about-me {
+  font-family: 'Times New Roman', Times, serif; /* Change font family */
+  color: #ffffff; /* Set font color */
+  font-size: 24px;
+  width: 90%;
+  max-width: 840px;
+  margin: 20px auto; /* Center the about-me section horizontally */
+  text-align: center;
+}
+
+
+
+.social-media {
+  text-align: center;
+
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 30px; /* Adjust spacing between icons */
+  color: #ffffff; /* Set color for icons */
+  font-size: 36px; /* Adjust icon size */
+}
+.projects-button:hover {
+  background-color: #ffffff; /* Change background color on hover */
+  color: #000000; /* Change text color on hover */
+}
+.projects-button {
+  border: 2px solid #ffffff; /* Set border width and color */
+  background-color: transparent; /* Set background color transparent */
+  color: #ffffff; /* Set text color */
+  font-size: 30px; /* Set font size */
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px; /* Set padding */
+  border-radius: 24px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Add transition effect for background color */
+}
+
+/* Define styles for the scroll-down button icon */
+.scroll-down a .fa-arrow-circle-down {
+  animation: scrollAnimation 2s infinite; /* Apply animation with infinite loop */
+  transition: opacity 0.3s ease; /* Add transition effect for opacity */
+}
+.scroll-down a {
+  color: #ffffff; /* Set color for down arrow */
+  font-size: 54px; /* Adjust arrow size */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Define styles for the scroll-down arrow */
+.scroll-down {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.project-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.centered-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.project-box {
+  position: relative;
+  width: calc(45% - 8px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 45px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+}
+
+
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998; 
+  backdrop-filter: blur(1.5px); 
+} */
+
+
+
+
+.project-box:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  opacity: 1;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); /* Adjust values as needed */
+}
+
+
+.project-box img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+  margin: 0 auto; /* Center the image */
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.project-box h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.project-box p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.description {
+
+  max-height: 103px; /* Set a fixed height for the description */
+  overflow: hidden; /* Hide overflow text */
+
+}
+.description.expanded {
+  max-height: none; /* Allow expanding description */
+}
+
+.toggle {
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.project-box p.expanded {
+  max-height: none; /* Allow expanding description */
+}
+
+.project-box .toggle-btn {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.project-box .toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.project-box .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.project-box .buttons a {
+  display: inline-block;
+  background-color: #000000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-box .buttons a:hover {
+  background-color: #828282;
+}
+
+
+
+.space {
+  padding: 5px; /* Add margin to create space above the header bar */
+}
+.header-bar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  color: #000000;
+  width: 90%; /* Adjust width to match project boxes */
+  max-width: 1200px; /* Set maximum width to prevent over-expansion */
+  margin: 30px auto; /* Center the header bar horizontally */
+  border-radius: 24px;
+
+  
+}
+
+.project-gallery-heading h2 {
+  margin: 0;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-bar {
+  margin-right: 20px;
+}
+
+.social-media-bar a {
+  color: #000000;
+  font-size: 36px;
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.resume-button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.resume-button:hover {
+  background-color: #828282;
+}
+
+
+
+
+.bottom-details-box {
+  background-color: #ffffff; /* Background color for the bottom details box */
+  color: #000000; /* Text color */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 228px ; /* Padding around the details */
+  max-width: 1200px; /* Maximum width */
+  margin: 20px auto; /* Center the bottom details box and add space above */
+  border-radius: 24px; /* Rounded corners */
+}
+
+.bottom-details {
+  display: flex; /* Use flexbox to align items */
+  flex-direction: column; /* Stack details vertically */
+}
+
+.detail {
+  margin-bottom: 10px; /* Spacing between details */
+  border-bottom: 1px solid #000000; /* Add a solid white border bottom */
+  padding-bottom: 10px; /* Add padding below the border */
+}
+
+.detail:last-child {
+  border-bottom: none; /* Remove the border bottom from the last detail */
+}
+
+.detail a {
+  color: #000000; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.detail a:hover {
+  text-decoration: underline; /* Add underline on hover for links */
+}
+
+
+/* Style for the skill box */
+.skill-box {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
+  font-size: 30px;
+}
+
+/* Style for each skill box */
+.skill {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc; /* Border for each skill box */
+  border-radius: 24px; /* Rounded corners */
+  background-color: #fff;
+  width: fit-content; /* Adjust width based on content */
+  height: fit-content; /* Adjust height based on content */
+  box-shadow: 0 10px 10px rgba(110, 113, 168, 0.1); /* Add shadow effect */
+  margin-bottom: 10px; /* Add space between skill boxes */
+}
+.skills-heading {
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+
+}
+/* Style for the skill name */
+.skill-name {
+  font-size: 20px; /* Adjust as needed */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+  align-items: center;
+}
+
+/* Center the skills horizontally */
+.skills {
+  display: flex;
+  flex-wrap: wrap; /* Allow skills to wrap to the next line if necessary */
+  justify-content: center; /* Center the skills horizontally */
+  gap: 10px; /* Add some space between skills */
+}
+
+
+
+.footer {
+  color: #fff; /* Text color */
+  text-align: center; /* Center-align text */
+  padding: 50px; /* Padding around the content */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.credit-link {
+  text-decoration: none;
+  color: #fff; /* Link color */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.credit-link:hover {
+  text-decoration: underline; /* Add underline on hover for link */
+}
+
+/* ----------------------------------------------------------------- ANIMATIONS ------------------------------------------------------------------------------- */
+@keyframes glowingText {
+  0% {
+    background-position: 0 50%; /* Start position of the gradient */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position of the gradient */
+  }
+  100% {
+    background-position: 0 50%; /* End position of the gradient */
+  }
+}
+
+
+/* Define CSS animation for scroll animation */
+@keyframes scrollAnimation {
+  0% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); /* Start with a glow */
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Increase glow */
+  }
+}
+
+/* ----------------------------------------------------------------- OTHER MEDIA STYLES ------------------------------------------------------------------------------- */
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 768px) {
+  .App-main {
+    font-size: 5vw;
+    margin-top: 70px; /* Adjusted margin to move the element down */
+  }
+  
+  
+  .about-me {
+    font-size: 12px;
+    width: 90%;
+    margin: 0 auto; /* Center the about-me section */
+  }
+  
+  body {
+    background-image: none; /* Remove the background image */
+    background: linear-gradient(to bottom, #101053, #000000);
+  }
+
+  /* Social media icons */
+  .social-media {
+    margin-top: 10px; /* Adjusted margin for mobile devices */
+    text-align: center; /* Center the social media icons */
+  }
+
+  .social-media a {
+    margin-right: 20px; /* Adjusted spacing between icons for mobile devices */
+    font-size: 24px; /* Adjusted font size for icons on mobile devices */
+  }
+
+  /* Scroll-down arrow */
+  .scroll-down {
+    display: none;
+  }
+  /* Project heading */
+  .project-heading {
+    margin-top: 30px; /* Adjusted margin for mobile devices */
+    text-align: center; /* Center the project heading */
+  }
+
+  .project-heading h2 {
+    font-size: 36px; /* Adjusted font size for heading on mobile devices */
+  }
+
+  /* Project gallery */
+  .project-gallery {
+    margin-top: 30px; /* Adjusted margin for mobile devices */
+    text-align: center; /* Center the project gallery */
+  }
+
+  .project-box {
+    width: calc(80vw - 10px); /* Adjusted width of each project box for mobile devices */
+    display: inline-block; /* Ensure project boxes are displayed inline */
+    margin-bottom: 20px; /* Add space between project boxes */
+  }
+  
+  .project-box h3 {
+    font-size: 18px; /* Adjusted font size for heading on mobile devices */
+  }
+
+  .project-box img {
+    max-width: 100%; /* Set maximum width to prevent image overflow */
+    max-height: auto; /* Set maximum height to auto to maintain aspect ratio */
+    margin-bottom: 10px;
+  }
+
+  .project-box p {
+    font-size: 12px; /* Adjusted font size for description on mobile devices */
+  }
+  .description{
+    font-size: 12px;
+    text-align: left;
+    position: relative;
+  }
+  .project-box a {
+    padding: 8px 16px; /* Adjusted padding for link on mobile devices */
+    font-size: 10px; /* Adjusted font size for link on mobile devices */
+  }
+  .project-box .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .project-box .buttons a {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1.5vw 3vw; /* Adjusted padding for buttons based on viewport width */
+    text-decoration: none;
+    border-radius: 1vw; /* Adjusted border radius for buttons based on viewport width */
+    margin: 0 1vw; /* Adjusted margin for buttons based on viewport width */
+  }
+  
+  .project-box .buttons a:hover {
+    background-color: #828282;
+  }
+  
+
+  /* Header bar */
+  .header-bar {
+    width: 90%; /* Adjust width to match project boxes */
+    margin: 40px auto; /* Center the header bar horizontally */
+    padding: 15px; /* Adjust padding */
+    text-align: center; /* Center the content within the header bar */
+  }
+
+  .project-gallery-heading h2 {
+    font-size: 4vw; /* Adjusted font size for heading based on viewport width */
+
+  }
+  
+  .resume-button {
+    padding: 2vw 4vw; /* Adjusted padding based on viewport width */
+    font-size: 3vw; /* Adjusted font size for button based on viewport width */
+  }
+  
+  .social-media-bar a {
+    display: none;
+  }
+
+  .bottom-details-box {
+    background-color: #ffffff; /* Background color for the bottom details box */
+    color: #000000; /* Text color */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2.5vw; /* Adjusted font size for the bottom details box based on viewport width */
+    padding: 2vw 15vw; /* Adjusted padding around the details based on viewport width */
+    width: 54vw; /* Adjusted width as needed based on viewport width */
+    max-width: 1200px; /* Maximum width */
+    margin: 5vw auto; /* Center the bottom details box and add space above based on viewport width */
+    border-radius: 4vw; /* Adjusted rounded corners based on viewport width */
+  }
+  
+  .bottom-details {
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Stack details vertically */
+  }
+  
+  .detail {
+    margin-bottom: 1vw; /* Adjusted spacing between details based on viewport width */
+    border-bottom: 0.1vw solid #000000; /* Adjusted border bottom thickness based on viewport width */
+    padding-bottom: 1vw; /* Adjusted padding below the border based on viewport width */
+  }
+  
+  .detail:last-child {
+    border-bottom: none; /* Remove the border bottom from the last detail */
+  }
+  
+  .detail a {
+    color: #000000; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .detail a:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+  }
+  
+  .footer {
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align text */
+    padding: 5vw; /* Adjusted padding around the content based on viewport width */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2vw; /* Adjusted font size for the footer based on viewport width */
+    text-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.5); /* Adjusted text shadow based on viewport width */
+  }
+  
+  .credit-link {
+    text-decoration: none;
+    color: #fff; /* Link color */
+  }
+  
+  .credit-link:hover {
+    text-decoration: underline; /* Add underline on hover for link */
+  }
+  
+  .skills-heading {
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+  
+  }
+  
+  
+}
